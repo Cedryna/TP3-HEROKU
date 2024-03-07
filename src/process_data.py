@@ -14,7 +14,7 @@ def filtre_data(df: pd.DataFrame, cols: List[str]):
     return df[cols]
 
 def export_data(df: pd.DataFrame):
-    os.makedirs(exist_ok=True)
+    os.makedirs("data/interim/", exist_ok=True)
     df.to_csv("data/interim/data.csv", index=False)
 
 if __name__ == "__main__":
