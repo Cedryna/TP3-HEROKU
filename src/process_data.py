@@ -39,9 +39,12 @@ def export_data(df: pd.DataFrame):
     os.makedirs("data/interim/", exist_ok=True)
     df.to_csv(fic_export_data, index=False)
 
-if __name__ == "__main__":
-
-    # data_file: str = "data/raw/eco2mix-regional-tr.csv"
+def main_process():
     df: pd.DataFrame = load_data()
     df = format_data(df)
     export_data(df)
+
+if __name__ == "__main__":
+
+    # data_file: str = "data/raw/eco2mix-regional-tr.csv"
+    main_process()
