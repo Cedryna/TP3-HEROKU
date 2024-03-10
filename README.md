@@ -23,7 +23,13 @@ Si ce n'est pas le cas, il faudra l'installer. De l'aide peut être trouvée ici
   - conserver les choix par défaut lors de l'installation
 
 #### Résultat attendu dans VSCode
+
+Extensions installées dans VSCode
+
 ![VSCode extenstions installées](img/VSCode_extensions.jpg)
+
+Git installé
+
 ![git installé](img/git.jpg)
 
 ### Cloud - Outils - Heroku
@@ -33,10 +39,13 @@ Si ce n'est pas le cas, il faudra l'installer. De l'aide peut être trouvée ici
   - après cette étape, vous aurez initié la connexion à heroku depuis votre PC via un terminal de commandes
 
 #### Résultats attendus
+
 Compte Héroku créé
+
 ![compte heroku créé](img/heroku_account.jpg)
 
 Interface en lignes de commande installée (CLI)
+
 ![heroku cli init](img/heroku_cli_init.jpg)
 
 
@@ -70,9 +79,11 @@ Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
 #### Résultats attendus
 
 Environnement virtuel créé
+
 ![venv créé](img/venv.jpg)
 
 Librairies installées
+
 ![venv libs installées](img/venv_libs_installees.jpg)
 
 Environnement activé dans VScode
@@ -84,7 +95,7 @@ Environnement activé dans VScode
 Pré-requis : avoir l'environnement activé
 
 - run the app locally
-  - la commande : `$ heroku local -f Procfile.windows
+  - la commande : `$ heroku local -f Procfile.windows`
   - lien : https://devcenter.heroku.com/articles/getting-started-with-python#run-the-app-locally
 
 > A noter que la commande est différente car le fichier procfile n'attend pas de paramètre
@@ -92,8 +103,10 @@ Pré-requis : avoir l'environnement activé
 #### Résultats attendus
 
 Application lancée en local
+
 ![app locale](img/heroku_local.jpg)
 
 Vue de la commande
+
 ![app locale vue cli](img/heroku_local_cli.jpg)
 
