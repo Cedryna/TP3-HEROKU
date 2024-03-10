@@ -2,11 +2,9 @@ import streamlit as st
 import pandas as pd
 # import matplotlib.pyplot as plt
 import plotly.express as px
+from src.process_data import col_date, col_donnees, cols, fic_export_data
 
 # plt.switch_backend("TkAgg")
-
-col_date: str = "Date - Heure"
-col_donnees: str = "Consommation (MW)"
 
 # Title for your app
 st.title('Data Visualization App')
@@ -18,7 +16,7 @@ def load_data(file_path):
     return data
 
 # Assuming your CSV is named 'data.csv' and is in the same directory as your app.py
-df = load_data('data/interim/data.csv')
+df = load_data(fic_export_data)
 
 # Creating a line chart
 st.subheader('Line Chart of Numerical Data Over Time')
