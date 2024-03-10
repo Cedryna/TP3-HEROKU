@@ -5,7 +5,13 @@ import plotly.express as px
 from src.fetch_data import fetch_data, build_url
 from src.process_data import col_date, col_donnees, cols, fic_export_data, main_process
 import logging
+import os
 logging.basicConfig(level=logging.INFO)
+
+
+# * INIT REPO FOR DATA
+os.makedirs("data/raw/", exist_ok=True)
+os.makedirs("data/interim/", exist_ok=True)
 
 # plt.switch_backend("TkAgg")
 
