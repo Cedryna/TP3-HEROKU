@@ -19,5 +19,10 @@ $ git push heroku main
 
 Start (scale up) the app
 ```
-heroku ps:scale web=1
+$ heroku ps:scale web=1
+```
+
+Run a remote terminal on server
+```
+$ heroku run bash
 ```

@@ -27,7 +27,7 @@ def load_data(file_path):
         logging.warn(f"data file does not exist, calling fetch data to get last day of data")
         last_day: str = "2024-03-08"
         data: pd.DataFrame = fetch_data(build_url(last_day))
-        main_process(data)
+        main_process()
         data = pd.read_csv(file_path, parse_dates=[col_date])  # Adjust 'DateColumn' to your date column name*
     return data
 
