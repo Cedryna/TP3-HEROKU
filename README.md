@@ -35,6 +35,8 @@ Git installé
 ### Cloud - Outils - Heroku
 - create an account on Heroku: https://signup.heroku.com/
   > ATTENTION : la réalisation de l'ensemble des travaux pratiques peut être faite avec un compte gratuit; l'ajout d'un moyen de paiement n'est pas nécessaire et, par conséquent, non recommandé pour ce cours. Le personnel d'enseignement ne pourrait être tenu responsable de l'action d'ajouter un moyen de paiement et des coûts qui en résulteraient.
+
+  > A noter que l'inscriptiion à Heroku demande de définir une double authentification par MFA. Si vous n'avez pas d'applications équivalentes déjà installées, la procédure est présentée au cours de l'inscription.
 - download, install and setup CLI: https://devcenter.heroku.com/articles/getting-started-with-python#set-up
   - après cette étape, vous aurez initié la connexion à heroku depuis votre PC via un terminal de commandes
 
@@ -82,7 +84,16 @@ Environnement virtuel créé
 
 ![venv créé](img/venv.jpg)
 
-Librairies installées
+Librairies installées : afin de valider la bonne installation des librairires, il est recommandé d'effectuer les deux commandes suivantes (aussi illustrées par la capture ci-après)
+```
+$ .\.venv\Scripts\python.exe -c "import pandas; import streamlit; import plotly"
+# rien ne devrait être retourné
+
+$ .\.venv\Scripts\python.exe -c "import toto"
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'toto'
+```
 
 ![venv libs installées](img/venv_libs_installees.jpg)
 
@@ -99,6 +110,8 @@ Pré-requis : avoir l'environnement activé
   - lien : https://devcenter.heroku.com/articles/getting-started-with-python#run-the-app-locally
 
 > A noter que la commande est différente car le fichier procfile n'attend pas de paramètre
+
+> A noter aussi que lors du premier lancement de streamlit, un message demandant d'entrer un email peut apparaître dans la console et stopper le process. Il est recommandé d'arrêter le lancement (avec la commande `Ctrl + C`), puis d'exécuter la commande `streamlit hello` (dans le même terminal) afin de pouvoir passer cette étape. Suite à ça, on peut stopper ce process et relancer la commande initiale pour exécuter notre projet.
 
 #### Résultats attendus
 
