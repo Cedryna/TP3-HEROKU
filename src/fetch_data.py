@@ -20,9 +20,9 @@ def calculate_date_from_delta(n_days: int, date_start: datetime = None):
     Returns:
         str: date calculée, au format "%Y-%m-%d"
     """
-    # TODO
-    return ""
-
+    if date_start is None:
+        date_start = datetime.now()
+    return (date_start - timedelta(days=n_days)).strftime("%Y-%m-%d")
 
 def build_url(date: str):
     base_url: str = "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/eco2mix-regional-tr/records?"
