@@ -20,7 +20,10 @@ os.makedirs("data/interim/", exist_ok=True)
 
 # * remove outdated json files
 for file_path in glob.glob("data/raw/*json"):
-    os.remove(file_path)
+    try:
+        os.remove(file_path)
+    except FileNotFoundError as e:
+        logging.warning(e)
 
 # plt.switch_backend("TkAgg")
 
