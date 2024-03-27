@@ -5,7 +5,8 @@ import logging
 import os
 import glob
 
-def remove_data(df: pd.DataFrame, last_n_samples: int = 4*3):    # df: pd.DataFrame = pd.read_csv(fic_export_data)    return df.iloc[:-last_n_samples]    # df.to_csv(fic_export_data, index=False)
+def remove_data(df: pd.DataFrame, last_n_samples: int = 4*3):    # df: pd.DataFrame = pd.read_csv(fic_export_data)    
+    return df.iloc[:-last_n_samples]    # df.to_csv(fic_export_data, index=False)
 
 # Custom imports
 from src.fetch_data import load_data_from_lag_to_today
