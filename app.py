@@ -37,7 +37,7 @@ df, daily_avg = load_data(LAG_N_DAYS)
 colors = px.colors.qualitative.Set3
 
 # Ordering days of the week from Monday to Friday
-days_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+days_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday']
 
 st.subheader("Line Chart of Numerical Data Over Time")
 numerical_column = col_donnees
