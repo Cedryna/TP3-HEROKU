@@ -5,6 +5,8 @@ import logging
 import os
 import glob
 
+def remove_data(df: pd.DataFrame, last_n_samples: int = 4*3):    # df: pd.DataFrame = pd.read_csv(fic_export_data)    return df.iloc[:-last_n_samples]    # df.to_csv(fic_export_data, index=False)
+
 # Custom imports
 from src.fetch_data import load_data_from_lag_to_today
 from src.process_data import col_date, col_donnees, main_process, fic_export_data, calculate_daily_average
@@ -32,6 +34,7 @@ def load_data(lag_days: int):
     return data, daily_avg
 
 df, daily_avg = load_data(LAG_N_DAYS)
+df = remove_data(df, last_n_samples=4*24)
 
 # Assigning colors to each day of the week
 colors = px.colors.qualitative.Set3
