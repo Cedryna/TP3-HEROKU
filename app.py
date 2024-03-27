@@ -68,3 +68,51 @@ numerical_column = col_donnees
 # Create interactive line chart using Plotly
 fig = px.line(df, x=col_date, y=col_donnees, title="Consommation en fonction du temps")
 st.plotly_chart(fig)
+
+
+
+
+
+
+
+
+
+
+
+
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+
+# Suppose col_date is your date column and col_donnees is your consumption data column.
+# Ensure they are named appropriately as they appear in your CSV.
+
+# Function to load data
+@st.cache  # This decorator caches the data to prevent reloading on every interaction.
+def load_data():
+    data = pd.read_csv('your_data.csv', parse_dates=[col_date])
+    return data
+
+# Load data
+df = load_data()
+
+# Process data to find the mean consumption per day of the week
+# First ensure the date column is in datetime format
+df[col_date] = pd.to_datetime(df[col_date])
+
+# Then extract the day of the week from the date column
+df['day_of_week'] = df[col_date].dt.day_name()
+
+# Now group by day of the week and calculate the mean consumption
+df_mean = df.groupby('day_of_week')[col_donnees].mean().reset_index()
+
+# Sort the days in the order you want them to appear on the plot
+sorter = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+df_mean['day_of_week'] = pd.Categorical(df_mean['day_of_week'], categories=sorter, ordered=True)
+df_mean = df_mean.sort_values('day_of_week')
+
+# Create the plot using Plotly Express
+fig = px.bar(df_mean, x='day_of_week', y=col_donnees, title='Average Consumption by Day of the Week')
+
+# Show the plot in Streamlit
+st.plotly_chart(fig)
